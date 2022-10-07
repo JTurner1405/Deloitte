@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deloitte", "Deloitte\Deloitte.csproj", "{CD230A58-1019-41DB-A251-18A93D436AEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Deloitte.Test", "Deloitte.Test\Deloitte.Test.csproj", "{9A004A27-B6A4-418D-9197-CE148E7B0DF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deloitte.Test", "Deloitte.Test\Deloitte.Test.csproj", "{9A004A27-B6A4-418D-9197-CE148E7B0DF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Deloitte.Models", "Deloitte.Models\Deloitte.Models.csproj", "{C0734D44-6D7D-4B01-8BB5-E9A5F3609D97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deloitte.Models", "Deloitte.Models\Deloitte.Models.csproj", "{C0734D44-6D7D-4B01-8BB5-E9A5F3609D97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Deloitte.DB", "Deloitte.DB\Deloitte.DB.csproj", "{B7837F7E-DD46-415F-A510-2D9D15CEC5D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deloitte.DB", "Deloitte.DB\Deloitte.DB.csproj", "{B7837F7E-DD46-415F-A510-2D9D15CEC5D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Deloitte.API", "Deloitte.API\Deloitte.API.csproj", "{49526F7A-B5A7-4962-9C76-256A3B393DDD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CD230A58-1019-41DB-A251-18A93D436AEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CD230A58-1019-41DB-A251-18A93D436AEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CD230A58-1019-41DB-A251-18A93D436AEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CD230A58-1019-41DB-A251-18A93D436AEE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9A004A27-B6A4-418D-9197-CE148E7B0DF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9A004A27-B6A4-418D-9197-CE148E7B0DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A004A27-B6A4-418D-9197-CE148E7B0DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{B7837F7E-DD46-415F-A510-2D9D15CEC5D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7837F7E-DD46-415F-A510-2D9D15CEC5D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7837F7E-DD46-415F-A510-2D9D15CEC5D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49526F7A-B5A7-4962-9C76-256A3B393DDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49526F7A-B5A7-4962-9C76-256A3B393DDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49526F7A-B5A7-4962-9C76-256A3B393DDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49526F7A-B5A7-4962-9C76-256A3B393DDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
