@@ -5,12 +5,12 @@ using System.Data.SqlClient;
 
 namespace Deloitte.Test
 {
-    public class Tests
+    public class DBTests
     {
         private DBConnection conn;
         private int recordId;
 
-        public Tests()
+        public DBTests()
         {
             conn = new DBConnection();
         }
