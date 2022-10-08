@@ -9,15 +9,6 @@ namespace Deloitte.Models.RestModels
 {
     public class RootWeather
     {
-        public string cod { get; set; }
-        public int message { get; set; }
-        public int cnt { get; set; }
-        public List<List> list { get; set; }
-        public City city { get; set; }
-    }
-
-    public class List
-    {
         public int dt { get; set; }
         public Main main { get; set; }
         public List<Weather> weather { get; set; }
@@ -26,6 +17,15 @@ namespace Deloitte.Models.RestModels
         public int visibility { get; set; }
         public double pop { get; set; }
         public string dt_txt { get; set; }
+    }
+
+    public class Root
+    {
+        public string cod { get; set; }
+        public int message { get; set; }
+        public int cnt { get; set; }
+        public List<RootWeather> list { get; set; }
+        public City city { get; set; }
     }
 
     public class Main

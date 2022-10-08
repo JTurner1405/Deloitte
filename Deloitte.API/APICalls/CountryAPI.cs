@@ -16,7 +16,7 @@ namespace Deloitte.API.APICalls
 
         public async Task<List<Country>?> GetAllCountries()
         {
-            var request = new RestRequest("all", Method.Get);
+            var request = new RestRequest("/all", Method.Get);
 
             var response = await client.GetAsync(request);
 
@@ -31,7 +31,7 @@ namespace Deloitte.API.APICalls
 
         public async Task<Country?> GetCountry(string value)
         {
-            var request = new RestRequest("name/" + value, Method.Get);
+            var request = new RestRequest("/name/" + value, Method.Get);
 
             var response = await client.GetAsync(request);
             if (response.IsSuccessStatusCode)
@@ -45,7 +45,7 @@ namespace Deloitte.API.APICalls
 
         public async Task<List<Country>?> GetCountriesBySubRegion(string value)
         {
-            var request = new RestRequest("subregion/" + value, Method.Get);
+            var request = new RestRequest("/subregion/" + value, Method.Get);
 
             var response = await client.GetAsync(request);
 
@@ -60,7 +60,7 @@ namespace Deloitte.API.APICalls
 
         public async Task<List<Country>?> GetCountriesByRegion(string value)
         {
-            var request = new RestRequest("region/" + value, Method.Get);
+            var request = new RestRequest("/region/" + value, Method.Get);
 
             var response = await client.GetAsync(request);
 
@@ -75,7 +75,7 @@ namespace Deloitte.API.APICalls
 
         public async Task<List<Country>?> GetCountriesByCapital(string value)
         {
-            var request = new RestRequest("capital/" + value, Method.Get);
+            var request = new RestRequest("/capital/" + value, Method.Get);
 
             var response = await client.GetAsync(request);
 

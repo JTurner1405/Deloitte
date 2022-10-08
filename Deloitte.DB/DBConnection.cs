@@ -61,7 +61,7 @@ namespace Deloitte.DB
             }
         }
 
-        public Cities? GetCities(string name)
+        public List<Cities>? GetCities(string name)
         {
             try
             {
@@ -71,9 +71,31 @@ namespace Deloitte.DB
                     var sql = @"SELECT [Id],[Name],[State],[Country],[TouristRating]
       ,[DateEstablished],[EstimatePopulation],[TwoDigitCountryCode],[ThreeDigitCountryCode],[CurrencyCode]
   FROM [Cities] WHERE Name = @Name";
-                    var city = connection.Query<Cities>(sql, new { Name = name }).FirstOrDefault();
+                    var city = connection.Query<Cities>(sql, new { Name = name });
 
-                    return city;
+                    return city.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                var v1 = ex.Message;
+                return null;
+            }
+        }
+
+        public List<Cities>? GetCities(string name, string state)
+        {
+            try
+            {
+                using (var connection = new SqlConnection(Configuration.GetConnectionString()))
+                {
+                    connection.Open();
+                    var sql = @"SELECT [Id],[Name],[State],[Country],[TouristRating]
+      ,[DateEstablished],[EstimatePopulation],[TwoDigitCountryCode],[ThreeDigitCountryCode],[CurrencyCode]
+  FROM [Cities] WHERE Name = @Name and State = @State";
+                    var city = connection.Query<Cities>(sql, new { Name = name, State = state });
+
+                    return city.ToList();
                 }
             }
             catch (Exception ex)
@@ -190,7 +212,7 @@ WHERE Id = @Id";
 
                     connection.Execute(sql, param);
 
-                    return GetCities(city.Name);
+                    return GetCities(city.Name,city.State).FirstOrDefault();
                 }
             }
             catch (Exception ex)

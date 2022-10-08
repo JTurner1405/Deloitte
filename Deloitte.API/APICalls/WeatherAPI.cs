@@ -15,7 +15,7 @@ namespace Deloitte.API.APICalls
             apiKey = Configuration.GetAPIKey();
         }
 
-        public async Task<RootWeather?> GetWeatherByLatLang(double latitude, double longitude)
+        public async Task<List<RootWeather>?> GetWeatherByLatLang(double latitude, double longitude)
         {
             var request = new RestRequest(String.Format("forecast?lat={0}&lon={1}&appid={2}", latitude, longitude, apiKey), Method.Get);
 
@@ -23,13 +23,13 @@ namespace Deloitte.API.APICalls
 
             if(response.IsSuccessStatusCode)
             {
-                var result = JsonConvert.DeserializeObject<RootWeather>(response.Content);
-                return result;
+                var result = JsonConvert.DeserializeObject<Root>(response.Content);
+                return result.list;
             }
             return null;
         }
 
-        public async Task<RootWeather?> GetWeatherByCityTest(string city)
+        public async Task<List<RootWeather>?> GetWeatherByCityTest(string city)
         {
                 var request = new RestRequest(String.Format("forecast?q={0}&appid={1}", city, apiKey), Method.Get);
 
@@ -37,13 +37,13 @@ namespace Deloitte.API.APICalls
 
                 if (response.IsSuccessStatusCode)
                 {
-                    var result = JsonConvert.DeserializeObject<RootWeather>(response.Content);
-                    return result;
+                    var result = JsonConvert.DeserializeObject<Root>(response.Content);
+                    return result.list;
                 }
             return null;
         }
 
-        public async Task<RootWeather?> GetWeatherByCityTest(string city, string subRegion)
+        public async Task<List<RootWeather>?> GetWeatherByCityTest(string city, string subRegion)
         {
             var request = new RestRequest(String.Format("forecast?q={0},{1}&appid={2}", city, subRegion, apiKey), Method.Get);
 
@@ -51,8 +51,8 @@ namespace Deloitte.API.APICalls
 
             if (response.IsSuccessStatusCode)
             {
-                var result = JsonConvert.DeserializeObject<RootWeather>(response.Content);
-                return result;
+                var result = JsonConvert.DeserializeObject<Root>(response.Content);
+                return result.list;
             }
             return null;
         }
