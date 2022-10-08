@@ -2,6 +2,11 @@
 {
     public static class APIRoute
     {
-        public static string GetCity = "/City/{city}";
+        private const string cityName = "{city}";
+        private const string cityId = "{cityId}";
+
+        public const string City = "/City";
+        public const string GetCity = City + "/" + cityName;
+        public const string CityById = City + "/" + cityId;
     }
 }

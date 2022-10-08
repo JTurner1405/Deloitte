@@ -1,5 +1,6 @@
 ﻿
 using Deloitte.API.APICalls;
+using Deloitte.DB;
 
 namespace Deloitte.API.DI
 {
@@ -9,6 +10,7 @@ namespace Deloitte.API.DI
         {
             services.AddScoped<IWeatherAPI, WeatherAPI>();
             services.AddScoped<ICountryAPI, CountryAPI>();
+            services.AddScoped<IDBConnection, DBConnection>();
 
             return services;
         }
