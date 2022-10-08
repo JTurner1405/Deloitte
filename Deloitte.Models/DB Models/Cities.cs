@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Deloitte.Models.RestModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -42,5 +43,17 @@ namespace Deloitte.Models.DB_Models
         [Required]
         [StringLength(5)]
         public string CurrencyCode { get; set; }
+
+        public Cities() { }
+        public Cities(Country country)
+        {
+            Name = country.capital.FirstOrDefault();
+            State = country.subregion;
+            Country = country.name.common;
+            EstimatePopulation = country.population;
+            TwoDigitCountryCode = country.cca2;
+            ThreeDigitCountryCode = country.cca3;
+            CurrencyCode = country.cioc;
+        }
     }
 }

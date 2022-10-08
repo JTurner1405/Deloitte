@@ -41,6 +41,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Deloitte.API\Deloitte.API.csproj" />
     <ProjectReference Include="..\Deloitte.DB\Deloitte.DB.csproj" />
   </ItemGroup>
 

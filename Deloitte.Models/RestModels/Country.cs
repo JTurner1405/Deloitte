@@ -16,7 +16,7 @@ namespace Deloitte.Models.RestModels
         public List<double> latlng { get; set; }
         public double area { get; set; }
         public string flag { get; set; }
-        public int population { get; set; }
+        public string population { get; set; }
         public List<string> continents { get; set; }
         public CountryCapitalInfo capitalInfo { get; set; }
         public string cca2 { get; set; }
